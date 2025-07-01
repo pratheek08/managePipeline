@@ -5,6 +5,13 @@ terraform {
       version = "4.24.0"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name  = "pratheekSTORAGE-rg"
+    storage_account_name = "pratheekstorage0008"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
 }
 provider "azurerm" {
     subscription_id = "a0375fab-9657-42bc-b9a6-a77e7985af70"
